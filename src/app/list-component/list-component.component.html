@@ -1,0 +1,18 @@
+<ul>
+    <div *ngFor="let item of items">
+        <li>
+            <div *ngIf="item.title">
+                <h3>{{item.title}}</h3>
+                <h2>{{item.personAlias}}</h2>
+                <h3>Description</h3>
+                <p>{{item.description}}</p>
+                <div *ngIf="item.emotions">
+                    <app-list-component [items]="item.emotions"></app-list-component>
+                </div>
+            </div>
+            <div *ngIf="item.timeCode">
+                <p><em>{{item.timeCode}}</em>: {{item.emotion}}</p>
+            </div>
+        </li>
+    </div>
+</ul>
